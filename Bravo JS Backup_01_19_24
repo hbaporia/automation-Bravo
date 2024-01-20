@@ -170,6 +170,127 @@ tipBoxIndex = tipBoxIndex + 1;
 
 
 
+//4_mastermix_columns_to_4_quadrants_mastermix_transfer_for_384w_qpcr_setup.pro
+
+// === Startup protocol section>Javascript Command ===
+var mastermixTransferVolume = 15;
+var multiDispenseLiquidClass = "96 Water Fast Multidispense";
+var dispenseHeight = 3;
+var sourceColumnNumber = 1;
+var dispenseColumn = 1;
+
+// === Main Protocol section>Javascript Command ===
+var dispenseColumn = outerLoopCount;
+
+// === Main Protocol section>Tips On (Bravo) Command ===
+task.Wellselection = [[1, sourceColumnNumber]]
+
+// === Main Protocol section>Aspirate (Bravo) ===
+task.Wellselection = [[1, sourceColumnNumber]];
+
+// === Main Protocol section>Dispense Command ===
+// Dispense to Quadrant 1
+
+if (outerLoopCount == 1)
+{
+task.Wellselection = [[1, dispenseColumn]];
+}
+
+if (outerLoopCount == 2)
+{
+task.skip();
+}
+
+if (outerLoopCount == 3)
+{
+task.skip();
+}
+
+if (outerLoopCount == 4)
+{
+task.skip();
+}
+
+
+// === Main Protocol section>Dispense Command ===
+// Dispense to Quadrant 2
+
+if (outerLoopCount == 1)
+{
+task.skip();
+}
+
+if (outerLoopCount == 2)
+{
+task.Wellselection = [[1, dispenseColumn+1]];
+}
+
+if (outerLoopCount == 3)
+{
+task.skip();
+}
+
+if (outerLoopCount == 4)
+{
+task.skip();
+}
+
+// === Main Protocol section>Dispense Command ===
+// Dispense to Quadrant 3
+
+if (outerLoopCount == 1)
+{
+task.skip();
+}
+
+if (outerLoopCount == 2)
+{
+task.skip();
+}
+
+if (outerLoopCount == 3)
+{
+task.Wellselection = [[2, dispenseColumn]];
+}
+
+if (outerLoopCount == 4)
+{
+task.skip();
+}
+
+// === Main Protocol section>Dispense Command ===
+// Dispense to Quadrant 4
+
+if (outerLoopCount == 1)
+{
+task.skip();
+}
+
+if (outerLoopCount == 2)
+{
+task.skip();
+}
+
+if (outerLoopCount == 3)
+{
+task.skip();
+}
+
+if (outerLoopCount == 4)
+{
+task.Wellselection = [[2, dispenseColumn+1]];
+}
+
+// === Main Protocol section>Javascript Command ===
+var tipDropLocation = 8+sourceColumnNumber;
+
+// === Main Protocol section>Tips Off i 1 selection(s) Command ===
+task.Wellselection = [[1, tipDropLocation]]
+
+
+      
+
+
 
 
 

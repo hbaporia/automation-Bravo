@@ -1,1 +1,179 @@
+/*
+This file will contain any JS backup in the following 16 Bravo protocols found in the production folder
+1. single_dispense_mastermix_transfer_for_384w_qpcr_setup.pro
+2. rna_transfer_for_384w_qpcr_setup.pro
+3. 4_mastermix_columns_to_4_quadrants_mastermix_transfer_for_384w_qpcr_setup.pro
+4. bromophenol_blue_stamping.pro
+5. OD600_assay_stamping.pro
+6. phosphate_solubility_stamping.pro
+7. picogreen_costar_source_plate.pro
+8. picogreen_htp.pro
+9. picogreen_kingfisher_source_plate.pro
+10. rna_quant.pro
+11. rna_quant_standards_plate.pro
+12. super_stamping.pro
+13. maintenance.pro
+14. microbial_serial_dilution.pro
+15.Parameterizable Serial Dilutions.pro
+16. soil_dna_extraction.pro
+*/
+
+  //single_dispense_mastermix_transfer_for_384w_qpcr_setup.pro
+
+// === Startup protocol section>Javascript Command ===
+var mastermixTransferVolume = 15;
+var multiDispenseLiquidClass = "96 Water Fast Multidispense";
+var dispenseHeight = 3;
+var sourceColumnNumber = 1;
+var dispenseColumn = 1;
+
+// === Main Protocol section>Javascript Command ===
+var dispenseColumn = outerLoopCount;
+
+// === Main Protocol section>Tips On (Bravo) Command ===
+task.Wellselection = [[1, sourceColumnNumber]]
+
+// === Main Protocol section>Aspirate (Bravo) Command ===
+task.Wellselection = [[1, sourceColumnNumber]];
+
+// === Main Protocol section>Dispense (Bravo) ===
+// Dispense to Quadrants 1 & 2
+if (outerLoopCount == 1)
+{
+task.Wellselection = [[1, dispenseColumn]];
+}
+
+if (outerLoopCount == 2)
+{
+task.skip();
+}
+
+// === Main Protocol section>Dispense (Bravo) Command ===
+// Dispense to Quadrants 3 & 4
+if (outerLoopCount == 1)
+{
+task.skip();
+}
+
+if (outerLoopCount == 2)
+{
+task.Wellselection = [[2, dispenseColumn]];
+}
+
+// === Main Protocol section>Javascript ===
+var tipDropLocation = 10+sourceColumnNumber;
+
+// === Main Protocol section>Tips Off in 1 selection(s) ===
+task.Wellselection = [[1, tipDropLocation]]
+
+
+
+
+  //rna_transfer_for_384w_qpcr_setup.pro
+
+// === Startup protocol section>Javascript Command ===
+var transferVolume = 0
+var loopCount = 0
+var tipBoxIndex = 1
+var blowoutVolume = 10
+
+// === Main Protocol section>Display User Image Command ===
+if (loopCount == 1)
+{
+task.skip();
+}
+
+if (loopCount == 2)
+{
+task.skip();
+}
+
+if (loopCount == 4)
+{
+task.skip();
+}
+
+// === Main Protocol section>Dispense (Bravo) Command ===
+// Dispense to Quadrant 1
+
+if (loopCount != 1)
+{
+task.skip()
+}
+
+// === Main Protocol section>Dispense (Bravo) Command ===
+// Dispense to Quadrant 1
+
+if (loopCount != 1)
+{
+task.skip()
+}
+
+
+// === Main Protocol section>Dispense (Bravo) Command ===
+// Dispense to Quadrant 3
+
+if (loopCount != 3)
+{
+task.skip()
+}
+
+// === Main Protocol section>Dispense (Bravo) Command ===
+// Dispense to Quadrant 3
+
+if (loopCount != 3)
+{
+task.skip()
+}
+
+// === Main Protocol section>Dispense (Bravo) Command ===
+// Dispense to Quadrant 2
+
+if (loopCount != 2)
+{
+task.skip()
+}
+
+
+// === Main Protocol section>Dispense (Bravo) Command ===
+// Dispense to Quadrant 2
+
+if (loopCount != 2)
+{
+task.skip()
+}
+
+// === Main Protocol section>Dispense (Bravo) Command ===
+// Dispense to Quadrant 4
+
+if (loopCount != 4)
+{
+task.skip()
+}
+
+// === Main Protocol section>Dispense (Bravo) Command ===
+// Dispense to Quadrant 4
+
+if (loopCount != 4)
+{
+task.skip()
+}
+
+// === Main Protocol section>Javascript Command ===
+tipBoxIndex = tipBoxIndex + 1;
+
+if (loopCount == 2)
+{
+tipBoxIndex = tipBoxIndex + 1;
+}
+
+
+
+
+
+
+
+
+
+
 

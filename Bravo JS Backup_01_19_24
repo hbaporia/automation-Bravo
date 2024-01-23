@@ -548,9 +548,893 @@ sourceAspirationHeight = 3;
 
 
 
+//rna_quant.pro
+
+N/a
 
 
 
+
+//rna_quant_standards_plate
+
+N/a
+
+
+
+
+//super_stamping.pro
+
+// === Startup protocol section>Labware proxy logic Command ===
+// This is the labware proxy logic tree 
+
+// TIPS 
+if (tipTypeProxy == "20ul filtered tips")
+{
+tipType = "96 Axygen VTF20RS Tip Box 20ul Filtered"; 
+}
+
+if (tipTypeProxy == "165ul filtered tips")
+{
+tipType = "96 Axygen VTF165LRS Tip Box 165ul Filtered";
+}
+
+// SOURCES 
+if (sourceTypeProxy == "80ml diamond-bottom reservoir")
+{
+sourceType = "1 Axygen RESSW96LP PP 86ml Reservoir";
+}
+
+if (sourceTypeProxy == "300ml nalgene reservoir")
+{
+sourceType = "1 Thermo 12001301 PP 300ml Reservoir";
+}
+
+if (sourceTypeProxy == "96w qPCR plate")
+{
+sourceType = "96 AB 4483354 Optical PP 300ul qPCR";
+}
+
+if (sourceTypeProxy == "96w NEST PCR plate")
+{
+sourceType = "96 NEST 402601 PP 300ul PCR";
+}
+
+if (sourceTypeProxy == "96w PCR plate on CoolRack XT block")
+{
+sourceType = "96 Corning 432053 CoolRack XT PCR";
+}
+
+if (sourceTypeProxy == "96w KingFisher elution plate")
+{
+sourceType = "96 Thermo KingFisher PP 450ul SWP"
+}
+
+if (sourceTypeProxy == "96w Costar clear flat-bottom plate")
+{
+sourceType = "96 Costar 3610 White Clear Bottom PS 375ul SWP";
+}
+
+if (sourceTypeProxy == "96w Costar black flat-bottom plate")
+{
+sourceType = "96 Costar 3792 Black PS 375ul SWP";
+}
+
+if (sourceTypeProxy == "96w BRAND clear round-bottom plate")
+{
+sourceType = "96 Greiner 655101 PS Clr Rnd Well Flat Btm";
+}
+
+if (sourceTypeProxy == "96w 1ml round-bottom plate")
+{
+sourceType = "96 Thermo 260252 PP 1ml MWP";
+}
+
+if (sourceTypeProxy == "96w 2ml round-bottom plate")
+{
+sourceType = "96 Thermo 278743 PP 2ml DWP";
+}
+
+if (sourceTypeProxy == "96w 2ml V-bottom plate")
+{
+sourceType = "96 Costar 3961 PP 2ml assay block";
+}
+
+if (sourceTypeProxy == "96w IDT oligo DWP")
+{
+sourceType = "96 IDT Abgene Storage 2ml DWP";
+}
+
+if (sourceTypeProxy == "96w KingFisher 2ml plate")
+{
+sourceType = "96 Thermo KingFisher 2ml DWP";
+}
+
+if (sourceTypeProxy == "Analytical Para-dox rxn vials")
+{
+sourceType = "96 Analytical Para-dox 96960 Glass Flat Bottom";
+}
+
+// 384W SOURCE LABWARE
+if (sourceTypeProxy == "384w qPCR plate")
+{
+sourceType = "384 AB 4483273 Optical PP 40ul qPCR";
+}
+
+if (sourceTypeProxy == "384w qPCR plate on CoolRack XT block")
+{
+sourceType = "384 Corning 432055 CoolRack XT PCR";
+}
+
+if (sourceTypeProxy == "384w clear flat-bottom plate")
+{
+sourceType = "384 Greiner 781101 PS clr flt btm";
+}
+
+if (sourceTypeProxy == "384w deep well V-bottom plate")
+{
+sourceType = "384 Corning 3342 PP 240ul VB";
+}
+
+// DESTINATIONS
+
+if (destinationTypeProxy == "30ml agar Nunc OmniTray")
+{
+destinationType = "1 Thermo Nunc 140156 OmniTray";
+}
+
+if (destinationTypeProxy == "96w qPCR plate")
+{
+destinationType = "96 AB 4483354 Optical PP 300ul qPCR";
+}
+
+if (destinationTypeProxy == "96w NEST PCR plate")
+{
+destinationType = "96 NEST 402601 PP 300ul PCR";
+}
+
+if (destinationTypeProxy == "96w PCR plate on CoolRack XT block")
+{
+destinationType = "96 Corning 432053 CoolRack XT PCR";
+}
+
+if (destinationTypeProxy == "96w KingFisher elution plate")
+{
+destinationType = "96 Thermo KingFisher PP 450ul SWP"
+}
+
+if (destinationTypeProxy == "96w Costar clear flat-bottom plate")
+{
+destinationType = "96 Costar 3610 White Clear Bottom PS 375ul SWP";
+}
+
+if (destinationTypeProxy == "96w Costar black flat-bottom plate")
+{
+destinationType = "96 Costar 3792 Black PS 375ul SWP";
+}
+
+if (destinationTypeProxy == "96w BRAND clear round-bottom plate")
+{
+destinationType = "96 Greiner 655101 PS Clr Rnd Well Flat Btm";
+}
+
+if (destinationTypeProxy == "96w 1ml round-bottom plate")
+{
+destinationType = "96 Thermo 260252 PP 1ml MWP";
+}
+
+if (destinationTypeProxy == "96w 2ml round-bottom plate")
+{
+destinationType = "96 Thermo 278743 PP 2ml DWP";
+}
+
+if (destinationTypeProxy == "96w 2ml V-bottom plate")
+{
+destinationType = "96 Costar 3961 PP 2ml assay block";
+}
+
+if (destinationTypeProxy == "96w IDT oligo DWP")
+{
+destinationType = "96 IDT Abgene Storage 2ml DWP";
+}
+
+if (destinationTypeProxy == "96w KingFisher 2ml plate")
+{
+destinationType = "96 Thermo KingFisher 2ml DWP";
+}
+
+if (destinationTypeProxy == "Analytical Para-dox rxn vials")
+{
+destinationType = "96 Analytical Para-dox 96960 Glass Flat Bottom";
+}
+
+// 384W DESTINATION LABWARE
+if (destinationTypeProxy == "384w qPCR plate")
+{
+destinationType = "384 AB 4483273 Optical PP 40ul qPCR";
+}
+
+if (destinationTypeProxy == "384w qPCR plate on CoolRack XT block")
+{
+destinationType = "384 Corning 432055 CoolRack XT PCR";
+}
+
+if (destinationTypeProxy == "384w clear flat-bottom plate")
+{
+destinationType = "384 Greiner 781101 PS clr flt btm";
+}
+
+if (destinationTypeProxy == "384w deep well V-bottom plate")
+{
+destinationType = "384 Corning 3342 PP 240ul VB";
+}
+
+// === Startup protocol section>Process Control Logic Command ===
+var sourceToggle384w = sourceType.indexOf("384") != -1 ? 1 : 0;
+var destinationToggle384w = destinationType.indexOf("384") != -1 ? 1 : 0;
+
+if (sourcePlateCount == destinationPlateCount) {
+    if (sourceToggle384w == 0 && destinationToggle384w == 0) {
+        var processSelectionValue = 1;
+        var worktableLayout = "96w One-to-One";
+    } else if (sourceToggle384w == 1 && destinationToggle384w == 1 && _384wTransferType == "One-to-One") {
+        var processSelectionValue = 2;
+        var worktableLayout = "384w One-to-One";
+    }
+}
+
+if (_384wTransferType == "Consolidation" && destinationToggle384w == 1) {
+    var processSelectionValue = 3;
+    var worktableLayout = "96w to 384w Consolidation";
+}
+
+if (_384wTransferType == "Split" && sourceToggle384w == 1) {
+    var processSelectionValue = 4;
+    var worktableLayout = "384w to 96w Split";
+}
+
+if (sourcePlateCount == 1 && destinationPlateCount > sourcePlateCount && sourceToggle384w == 0 && destinationToggle384w == 0) {
+    var processSelectionValue = 5;
+    var worktableLayout = "96w One-to-Many";
+}
+
+if (_384wTransferType == "One-to-Many" && (sourceToggle384w == 1 || destinationToggle384w == 1) && (sourcePlateCount == 1 || sourceQuadrantCount == 1)) {
+    var processSelectionValue = 6;
+    var worktableLayout = "384w One-to-Many";
+}
+
+if (destinationPlateCount > sourcePlateCount && destinationPlateCount == 1 && sourceToggle384w == 0 && destinationToggle384w == 0) {
+    var processSelectionValue = 7;
+    var worktableLayout = "96w Many-to-One";
+}
+
+if (_384wTransferType == "Many-to-One" && (sourceToggle384w == 1 || destinationToggle384w == 1) && (destinationPlateCount == 1 || destinationQuadrantCount == 1)) {
+    var processSelectionValue = 8;
+    var worktableLayout = "384w Many-to-One";
+}
+
+// === Startup protocol section>Worktable Setting logic Command ===
+if ((worktableLayout == "96w One-to-One") || (worktableLayout == "384w One-to-One"))
+{
+var slot1 = tipType;
+var slot2 = tipType;
+var slot3 = tipType;
+var slot4 = sourceType;
+var slot5 = sourceType;
+var slot6 = sourceType;
+var slot7 = destinationType;
+var slot8 = destinationType;
+var slot9 = destinationType;
+}
+
+if (worktableLayout == "96w to 384w Consolidation")
+{
+var slot1 = tipType;
+var slot2 = tipType;
+var slot3 = tipType;
+var slot4 = sourceType;
+var slot5 = sourceType;
+var slot6 = tipType;
+var slot7 = sourceType;
+var slot8 = sourceType;
+var slot9 = destinationType;
+}
+
+if (worktableLayout == "384w to 96w Split")
+{
+var slot1 = tipType;
+var slot2 = tipType;
+var slot3 = tipType;
+var slot4 = destinationType;
+var slot5 = destinationType;
+var slot6 = tipType;
+var slot7 = destinationType;
+var slot8 = destinationType;
+var slot9 = sourceType;
+}
+
+if (worktableLayout == "96w One-to-Many")
+{
+var slot1 = destinationType;
+var slot2 = destinationType;
+var slot3 = destinationType;
+var slot4 = destinationType;
+var slot5 = destinationType;
+var slot6 = destinationType;
+var slot7 = destinationType;
+var slot8 = tipType;
+var slot9 = sourceType;
+}
+
+if (worktableLayout == "384w One-to-Many")
+{
+var slot1 = destinationType;
+var slot2 = destinationType;
+var slot3 = destinationType;
+var slot4 = destinationType;
+var slot5 = destinationType;
+var slot6 = destinationType;
+var slot7 = destinationType;
+var slot8 = tipType;
+var slot9 = sourceType;
+}
+
+if (worktableLayout == "96w Many-to-One")
+{
+var slot1 = sourceType;
+var slot2 = sourceType;
+var slot3 = sourceType;
+var slot4 = sourceType;
+var slot5 = sourceType;
+var slot6 = sourceType;
+var slot7 = sourceType;
+var slot8 = tipType;
+var slot9 = destinationType;
+}
+
+if (worktableLayout == "384w Many-to-One")
+{
+var slot1 = sourceType;
+var slot2 = sourceType;
+var slot3 = sourceType;
+var slot4 = sourceType;
+var slot5 = sourceType;
+var slot6 = sourceType;
+var slot7 = sourceType;
+var slot8 = tipType;
+var slot9 = destinationType;
+}
+
+// === Startup protocol section>Print variables to the log Command ===
+print(sourceType)
+print(destinationType)
+print(tipType)
+
+print(sourceToggle384w)
+print(destinationToggle384w)
+print(sourcePlateCount)
+print(destinationPlateCount)
+print(_384wTransferType)
+
+print(worktableLayout)
+
+print(slot1)
+print(slot2)
+print(slot3)
+print(slot4)
+print(slot5)
+print(slot6)
+print(slot7)
+print(slot8)
+print(slot9)
+
+// === Main Protocol section>Liquid Classes, Mixing Classes, Special Exceptions Command ===
+// TRANSFER LIQUID CLASSES 
+
+if (liquidClassProxy == "Water")
+{
+    if (transferVolume <= 5)
+    {
+    var transferLiquidClass = "96 Water Slow";
+    }
+
+    else if (5 < transferVolume <= 51)
+    {
+    var transferLiquidClass = "96 Water Medium";
+    }
+
+    else if (51 < transferVolume <= 200)
+    {
+    var transferLiquidClass = "96 Water Fast";
+    }
+}
+
+if (liquidClassProxy == "Ethanol")
+{
+    if (transferVolume <= 5)
+    {
+    var transferLiquidClass = "96 Ethanol Slow";
+    }
+
+    else if (5 < transferVolume <= 51)
+    {
+    var transferLiquidClass = "96 Ethanol Medium";
+    }
+
+    else if (51 < transferVolume <= 200)
+    {
+    var transferLiquidClass = "96 Ethanol Fast";
+    }
+}
+
+if (liquidClassProxy == "Detergent")
+{
+    if (transferVolume <= 5)
+    {
+    var transferLiquidClass = "96 Detergent Slow";
+    }
+
+    else if (5 < transferVolume <= 51)
+    {
+    var transferLiquidClass = "96 Detergent Medium";
+    }
+
+    else if (51 < transferVolume <= 200)
+    {
+    var transferLiquidClass = "96 Detergent Fast";
+    }
+}
+
+if (liquidClassProxy == "Viscous")
+{
+    if (transferVolume <= 5)
+    {
+    var transferLiquidClass = "96 Viscous Slow";
+    }
+
+    else if (5 < transferVolume <= 51)
+    {
+    var transferLiquidClass = "96 Viscous Medium";
+    }
+
+    else if (51 < transferVolume <= 200)
+    {
+    var transferLiquidClass = "96 Viscous Fast";
+    }
+}
+
+// MIXING LIQUID CLASSES
+if (mixLiquidClassProxy == "Gentle")
+{
+var mixLiquidClass = "96 Water Slow";
+}
+
+if (mixLiquidClassProxy == "Medium")
+{
+var mixLiquidClass = "96 Water Medium";
+}
+
+if (mixLiquidClassProxy == "Fast")
+{
+var mixLiquidClass = "96 TEMPLATE Max Speed";
+}
+
+if (mixLiquidClassProxy == "Very Fast")
+{
+var mixLiquidClass = "96 Water Very Fast";
+}
+
+if (mixLiquidClassProxy == "Inversion")
+{
+var mixLiquidClass = "96 Water Inversion Mix";
+}
+
+// STERILE DISPENSE HANDLING
+if (sterileDispenseToggle == 1)
+{
+dispenseHeight = 20; 
+}
+
+// SPECIAL EXCEPTIONS
+// (20UL TIPS + DWP-SPECIFIC LOGIC TREE)
+if ((tipType == "96 Axygen VTF20RS Tip Box 20ul Filtered") && (sourceType.indexOf("2ml") != -1))
+{
+aspirateHeight = 22.5;
+}
+
+if ((tipType == "96 Axygen VTF20RS Tip Box 20ul Filtered") && (destinationType.indexOf("2ml") != -1) && (sterileDispenseToggle == 0))
+{
+dispenseHeight = 22.5;
+}
+
+if ((destinationType.indexOf("2ml") != -1) && (sterileDispenseToggle == 1))
+{
+dispenseHeight = 40.0;
+}
+
+// Analytical Paradox chemical rxn block glass vial logic tree
+if ((tipType == "96 Axygen VTF20RS Tip Box 20ul Filtered") && (sourceType == "96 Analytical Para-dox 96960 Glass Flat Bottom") && (aspirateHeight == 0))
+{
+aspirateHeight = 1;
+}
+
+if ((tipType == "96 Axygen VTF20RS Tip Box 20ul Filtered") && (destinationType == "96 Analytical Para-dox 96960 Glass Flat Bottom") && (dispenseHeight == 0) && (sterileDispenseToggle == 0))
+{
+dispenseHeight = 1;
+}  
+
+// OmniTray handling logic tree
+omniTrayToggle = "False";
+if (destinationType == "1 Thermo Nunc 140156 OmniTray")
+{
+omniTrayToggle = "True";
+}
+print(omniTrayToggle);
+
+// === Main Protocol section>96w One-to-One>Mix Command ===
+if (sourceMixToggle == 0)
+{
+task.skip();
+}
+
+// === Main Protocol section>96w One-to-One>Dispense Command ===
+if (omniTrayToggle == "False"){
+
+    if (tipTouchToggle == 0 && sterileDispenseToggle == 0){
+    task.Performtiptouch = false;
+    task.Tiptouchretractdistance = 6;
+    }
+
+    if (tipTouchToggle == 0 && sterileDispenseToggle == 1){
+    task.Performtiptouch = false;
+    task.Tiptouchretractdistance = 0;
+    }
+
+    if (tipTouchToggle == 1 && sterileDispenseToggle == 0){
+    task.Performtiptouch = true;
+    task.Tiptouchretractdistance = 6;
+    }
+
+    if (tipTouchToggle == 1 && sterileDispenseToggle == 1){
+    task.Performtiptouch = true;
+    }
+}
+
+// OmniTray handling logic tree
+if (omniTrayToggle == "True"){
+task.Liquidclass = "96 Water Slow";
+task.Distancefromwellbottom = 0.1;
+task.Dynamictipretraction = 0.2;
+task.Performtiptouch = true;
+task.Whichsidestousefortiptouch = "None";
+task.Tiptouchretractdistance = dispenseHeight;
+}
+
+// === Main Protocol section>96w One-to-One>Mix Command ===
+if (destinationMixToggle == 0){
+task.skip();
+}
+
+if (tipTouchToggle == 0){
+task.Performtiptouch = false;
+}
+
+if (sterileDispenseToggle == 0){
+task.Tiptouchretractdistance = 6;
+}
+
+if (sterileDispenseToggle == 1){
+task.Tiptouchretractdistance = 0;
+}
+
+// === Main Protocol section>384w One-to-One>Mix Command ===
+if (sourceMixToggle == 0)
+{
+task.skip();
+}
+
+// LOGIC TREE FOR SOURCE QUADRANT SELECTION
+if (sourceQ1Toggle == 1)
+{
+task.Wellselection = [[1, 1]];
+}
+
+if (sourceQ2Toggle == 1)
+{
+task.Wellselection = [[1, 2]];
+}
+
+if (sourceQ3Toggle == 1)
+{
+task.Wellselection = [[2, 1]];
+}
+
+if (sourceQ4Toggle == 1)
+{
+task.Wellselection = [[2, 2]];
+}
+
+// === Main Protocol section>384w One-to-One>Aspirate Command ===
+// LOGIC TREE FOR SOURCE QUADRANT SELECTION
+if (sourceQ1Toggle == 1)
+{
+task.Wellselection = [[1, 1]];
+}
+
+if (sourceQ2Toggle == 1)
+{
+task.Wellselection = [[1, 2]];
+}
+
+if (sourceQ3Toggle == 1)
+{
+task.Wellselection = [[2, 1]];
+}
+
+if (sourceQ4Toggle == 1)
+{
+task.Wellselection = [[2, 2]];
+}
+
+
+// === Main Protocol section>384w One-to-One>Dispense Command ===
+if ((tipTouchToggle == 1) && (destinationMixToggle == 0))
+{
+task.Performtiptouch = true;
+task.Whichsidestousefortiptouch = "West";
+
+    if (sterileDispenseToggle == 0)
+    {
+    task.Tiptouchretractdistance = 6;
+    }
+
+    if (sterileDispenseToggle == 1)
+    {
+    task.Tiptouchretractdistance = 0;
+    }
+}
+
+// LOGIC TREE FOR DESTINATION QUADRANT SELECTION
+if (destinationQ1Toggle == 1)
+{
+task.Wellselection = [[1, 1]];
+}
+
+if (destinationQ2Toggle == 1)
+{
+task.Wellselection = [[1, 2]];
+}
+
+if (destinationQ3Toggle == 1)
+{
+task.Wellselection = [[2, 1]];
+}
+
+if (destinationQ4Toggle == 1)
+{
+task.Wellselection = [[2, 2]];
+}
+
+// === Main Protocol section>384w One-to-One>Mix Command ===
+if (destinationMixToggle == 0)
+{
+task.skip();
+}
+
+if ((destinationMixToggle == 1) && (tipTouchToggle == 1))
+{
+task.Performtiptouch = true;
+task.Whichsidestousefortiptouch = "West";
+
+    if (sterileDispenseToggle == 0)
+    {
+    task.Tiptouchretractdistance = 6;
+    }
+
+    if (sterileDispenseToggle == 1)
+    {
+    task.Tiptouchretractdistance = 0;
+    }
+}
+
+// LOGIC TREE FOR DESTINATION QUADRANT SELECTION
+if (destinationQ1Toggle == 1)
+{
+task.Wellselection = [[1, 1]];
+}
+
+if (destinationQ2Toggle == 1)
+{
+task.Wellselection = [[1, 2]];
+}
+
+if (destinationQ3Toggle == 1)
+{
+task.Wellselection = [[2, 1]];
+}
+
+if (destinationQ4Toggle == 1)
+{
+task.Wellselection = [[2, 2]];
+}
+
+// === Main Protocol section>96w to 384w consolidation>Javascipt Command ===
+// SET LABWARE LOCATIONS FOR LIQUID HANDLING STEPS
+var destinationPlateLocation = 9;
+
+if (loopCount == 1)
+{
+var tipBoxLocation = 1;
+var sourcePlateLocation = 4;
+}
+
+if (loopCount == 2)
+{
+var tipBoxLocation = 2;
+var sourcePlateLocation = 5;
+}
+
+if (loopCount == 3)
+{
+var tipBoxLocation = 3;
+var sourcePlateLocation = 7;
+}
+
+if (loopCount == 4)
+{
+var tipBoxLocation = 6;
+var sourcePlateLocation = 8;
+}
+
+// LOGIC TREE TO SKIP UN-NEEDED QUADRANT DISPENSES
+var skipToggle = 0;
+
+if ((destinationQ1Toggle == 0) && (loopCount == 1))
+{
+skipToggle = 1;
+}
+
+if ((destinationQ2Toggle == 0) && (loopCount == 2)) 
+{
+skipToggle = 1;
+}
+
+if ((destinationQ3Toggle == 0) && (loopCount == 3))
+{
+skipToggle = 1;
+}
+
+if ((destinationQ4Toggle == 0) && (loopCount == 4)) 
+{
+skipToggle = 1;
+}
+
+print(skipToggle)
+
+// === Main Protocol section>96w to 384w consolidation>Tips On Command ===
+f (skipToggle == 1)
+{
+task.skip();
+}
+
+// === Main Protocol section>96w to 384w consolidation>Mix in source Command ===
+if (skipToggle == 1)
+{
+task.skip();
+}
+
+if (sourceMixToggle == 0)
+{
+task.skip();
+}
+
+// === Main Protocol section>96w to 384w consolidation>Aspirate Command ===
+if (skipToggle == 1)
+{
+task.skip();
+}
+
+// === Main Protocol section>96w to 384w consolidation>Dispense Command ===
+if (skipToggle == 1)
+{
+task.skip();
+}
+
+if ((tipTouchToggle == 1) && (destinationMixToggle == 0))
+{
+task.Performtiptouch = true;
+task.Whichsidestousefortiptouch = "West";
+
+    if (sterileDispenseToggle == 0)
+    {
+    task.Tiptouchretractdistance = 6;
+    }
+
+    if (sterileDispenseToggle == 1)
+    {
+    task.Tiptouchretractdistance = 0;
+    }
+}
+
+// LOGIC TREE FOR DESTINATION QUADRANT SELECTION
+if ((loopCount == 1) && (skipToggle == 0))
+{
+task.Wellselection = [[1, 1]];
+print("Q1 dispensing");
+}
+
+if ((loopCount == 2) && (skipToggle == 0))
+{
+task.Wellselection = [[1, 2]];
+print("Q2 dispensing");
+}
+
+if ((loopCount == 3) && (skipToggle == 0))
+{
+task.Wellselection = [[2, 1]];
+print("Q3 dispensing");
+}
+
+if ((loopCount == 4) && (skipToggle == 0))
+{
+task.Wellselection = [[2, 2]];
+print("Q4 dispensing");
+}
+
+// === Main Protocol section>96w to 384w consolidation>Mix in Q1/Q2/Q3/Q4 Command ===
+if (skipToggle == 1)
+{
+task.skip();
+}
+
+if (destinationMixToggle == 0)
+{
+task.skip();
+}
+
+if ((destinationMixToggle == 1) && (tipTouchToggle == 1))
+{
+task.Performtiptouch = true;
+task.Whichsidestousefortiptouch = "West";
+
+    if (sterileDispenseToggle == 0)
+    {
+    task.Tiptouchretractdistance = 6;
+    }
+
+    if (sterileDispenseToggle == 1)
+    {
+    task.Tiptouchretractdistance = 0;
+    }
+}
+
+// LOGIC TREE FOR DESTINATION QUADRANT SELECTION
+if (loopCount == 1)
+{
+task.Wellselection = [[1, 1]];
+}
+
+if (loopCount == 2)
+{
+task.Wellselection = [[1, 2]];
+}
+
+if (loopCount == 3)
+{
+task.Wellselection = [[2, 1]];
+}
+
+if (loopCount == 4)
+{
+task.Wellselection = [[2, 2]];
+}
+
+// === Main Protocol section>96w to 384w consolidation>Tips Off Command ===
+if (skipToggle == 1)
+{
+task.skip();
+}
+
+// === Main Protocol section>96w to 384w split> Command ===
 
 
 

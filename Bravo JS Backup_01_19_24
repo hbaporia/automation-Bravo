@@ -288,7 +288,266 @@ var tipDropLocation = 8+sourceColumnNumber;
 task.Wellselection = [[1, tipDropLocation]]
 
 
-      
+
+
+//bromophenol_blue_stamping.pro
+
+// === Startup protocol section>Move above Location 1 Command ===
+var liquidClass1 = "96 Water Medium";
+
+
+
+
+//OD600_assay_stamping.pro
+
+// === Startup protocol section>Javascript Command ===
+var liquidClass1 = "96 Water Medium";
+
+
+
+
+//phosphate_solubility_stamping.pro
+
+N/a
+
+
+
+
+//picogreen_costar_source_plate.pro
+
+// === Startup protocol section>Javascript Command ===
+var sourcePlateType = "96w Clear CoStar Plate"
+var sourcePlateType = "96w KingFisher Plate"
+
+if (sourcePlateType == "96w Clear CoStar Plate")
+{
+sourceAspirationHeight = 40;
+}
+
+if (sourcePlateType == "96w KingFisher Plate")
+{
+sourceAspirationHeight = 3;
+}
+
+// === Main Protocol>Javascipt Command (disabled) ===
+if (sourcePlateType == "96w Clear CoStar Plate")
+{
+sourceAspirationHeight = 40;
+}
+
+if (sourcePlateType == "96w KingFisher Plate")
+{
+sourceAspirationHeight = 3;
+}
+
+var "sourceAspirationHeight"
+
+if (sourcePlateType == "96w Clear CoStar Plate")
+{
+sourceAspirationHeight = 40;
+}
+
+if (sourcePlateType == "96w KingFisher Plate")
+{
+sourceAspirationHeight = 3;
+}
+
+
+
+
+
+//High Throughput Picogreen Assay setup
+
+// === Startup protocol section>Javascript Command ===
+// Temp variable for testing purposes, delete when ready
+// var dna_source_labware_type = "Clear Flat-Bottom Plate"
+
+// Set platepad positions for Configure Static Labware task for user input step_to_run = Transfer DNA to assay plates
+if (step_to_run == "Transfer DNA to assay plates")
+{
+    // Set dna_source_labware_type with user input proxy value from dropdown menu in VWForm
+    if (dna_source_labware_type == "Clear Flat-Bottom Plate")
+    {
+    var source_labware = "96 Greiner 655101 PS Clr Rnd Well Flat Btm";
+    }
+
+    if (dna_source_labware_type == "KingFisher Elution Plate")
+    {
+    var source_labware = "96 Thermo KingFisher PP 450ul SWP";
+    }
+
+    if (dna_source_labware_type == "PCR Plate")
+    {
+    var source_labware = "96 NEST 402601 PP 300ul PCR";
+    }
+
+    if (dna_source_labware_type == "1mL DeepWell Plate")
+    {
+    var source_labware = "96 Thermo 260252 PP 1ml MWP";
+    }
+
+    if (dna_source_labware_type == "2mL DeepWell Plate")
+    {
+    var source_labware = "96 Thermo 278743 PP 2mL DWP";
+    }
+
+var platepad_1 = "96 Axygen VTF20RS Tip Box 20ul Filtered";
+var platepad_2 = "96 Axygen VTF20RS Tip Box 20ul Filtered";
+var platepad_3 = "96 Axygen VTF20RS Tip Box 20ul Filtered";
+var platepad_4 = source_labware;
+var platepad_5 = source_labware;
+var platepad_6 = source_labware;
+var platepad_7 = "96 Costar 3792 Black Opaque Bottom PS 375ul SWP";
+var platepad_8 = "96 Costar 3792 Black Opaque Bottom PS 375ul SWP";
+var platepad_9 = "96 Costar 3792 Black Opaque Bottom PS 375ul SWP";
+}
+
+// Set platepad positions for Configure Static Labware task for user input step_to_run = Add TE buffer to assay plates or Add PicoGreen working solution to assay plates
+if ((step_to_run == "Add TE buffer to assay plates") || (step_to_run == "Add PicoGreen working solution to assay plates"))
+{
+var platepad_1 = "96 Costar 3792 Black Opaque Bottom PS 375ul SWP";
+var platepad_2 = "96 Costar 3792 Black Opaque Bottom PS 375ul SWP";
+var platepad_3 = "96 Costar 3792 Black Opaque Bottom PS 375ul SWP";
+var platepad_4 = "96 Costar 3792 Black Opaque Bottom PS 375ul SWP";
+var platepad_5 = "96 Costar 3792 Black Opaque Bottom PS 375ul SWP";
+var platepad_6 = "96 Costar 3792 Black Opaque Bottom PS 375ul SWP";
+var platepad_7 = "96 Costar 3792 Black Opaque Bottom PS 375ul SWP";
+var platepad_8 = "96 Axygen VTF165LRS Tip Box 165ul Filtered";
+var platepad_9 = "1 Thermo 12001301 PP 300ml Reservoir";
+}
+
+// === Startup protocol section>Configure static labware Command ===
+print(platepad_1)
+print(platepad_2)
+print(platepad_3)
+print(platepad_4)
+print(platepad_5)
+print(platepad_6)
+print(platepad_7)
+print(platepad_8)
+print(platepad_9)
+
+// === Main Protocol section>Javascript Command ===
+if (step_to_run == "Add TE buffer to assay plates")
+{
+var process_selection_value = 1;
+}
+
+if (step_to_run == "Transfer DNA to assay plates")
+{
+var process_selection_value = 2;
+}
+
+if (step_to_run == "Add PicoGreen working solution to assay plates")
+{
+var process_selection_value = 3;
+}
+
+// === Main Protocol section>Javascript Command ===
+var preaspirate_volume = 10
+var transfer_volume = 95
+var liquid_class = "96 Water Fast"
+
+
+// === Main Protocol section>Javascript Command ===
+var source_mix_volume = 20
+var source_mix_liquid_class = "96 Water Fast"
+var source_mix_count = 2
+
+var transfer_preaspirate_volume = 10
+var transfer_volume = 5
+var transfer_liquid_class = "96 Water Medium"
+
+var destination_mix_volume = 20
+var destination_mix_liquid_class ="96 Water Fast"
+var destination_mix_count = 2
+
+// === Main Protocol section>Javascript Command (Transfer DNA to assay plates) ===
+if ((loop_count == 1) || (loop_count == 4) || (loop_count == 7))
+{
+var tip_location = 1;
+var source_location = 4;
+var destination_location = 7;
+print(tip_location);
+}
+
+if ((loop_count == 2) || (loop_count == 5) || (loop_count == 8))
+{
+var tip_location = 2;
+var source_location = 5;
+var destination_location = 8;
+print(tip_location);
+}
+
+if ((loop_count == 3) || (loop_count == 6) || (loop_count == 9))
+{
+var tip_location = 3;
+var source_location = 6;
+var destination_location = 9;
+print(tip_location);
+}
+
+// === Main Protocol section>Display User Message Command ===
+if (loop_count < 3)
+{
+task.skip();
+}
+
+if ((loop_count == 4) || (loop_count == 5) || (loop_count == 7))
+{
+task.skip();
+}
+
+// === Main Protocol section>Javascript Command (PicoGreen Addition) ===
+var preaspirate_volume = 20
+var transfer_volume = 100
+var liquid_class = "96 Water Fast"
+
+
+
+
+//picogreen_kingfisher_source_plate.pro
+
+// === Startup Protocol>Javascipt Command ===
+var sourcePlateType = "96w Clear CoStar Plate"
+var sourcePlateType = "96w KingFisher Plate"
+
+if (sourcePlateType == "96w Clear CoStar Plate")
+{
+sourceAspirationHeight = 40;
+}
+
+if (sourcePlateType == "96w KingFisher Plate")
+{
+sourceAspirationHeight = 3;
+}
+
+// === Main Protocol>Javascipt Command (disabled) ===
+if (sourcePlateType == "96w Clear CoStar Plate")
+{
+sourceAspirationHeight = 40;
+}
+
+if (sourcePlateType == "96w KingFisher Plate")
+{
+sourceAspirationHeight = 3;
+}
+
+var "sourceAspirationHeight"
+
+if (sourcePlateType == "96w Clear CoStar Plate")
+{
+sourceAspirationHeight = 40;
+}
+
+if (sourcePlateType == "96w KingFisher Plate")
+{
+sourceAspirationHeight = 3;
+}
+
+
+
+
 
 
 

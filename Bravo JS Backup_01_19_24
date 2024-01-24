@@ -1434,10 +1434,513 @@ if (skipToggle == 1)
 task.skip();
 }
 
-// === Main Protocol section>96w to 384w split> Command ===
+// === Main Protocol section>96w to 384w split> Javascript Command ===
+// SET LABWARE LOCATIONS FOR LIQUID HANDLING STEPS
+var sourcePlateLocation = 9;
 
+if (loopCount == 1)
+{
+var tipBoxLocation = 1;
+var destinationPlateLocation = 4;
+}
 
+if (loopCount == 2)
+{
+var tipBoxLocation = 2;
+var destinationPlateLocation = 5;
+}
 
+if (loopCount == 3)
+{
+var tipBoxLocation = 3;
+var destinationPlateLocation = 7;
+}
 
+if (loopCount == 4)
+{
+var tipBoxLocation = 6;
+var destinationPlateLocation = 8;
+}
 
+// LOGIC TREE TO SKIP UN-NEEDED QUADRANT DISPENSES
+var skipToggle = 0;
+
+if ((sourceQ1Toggle == 0) && (loopCount == 1))
+{
+skipToggle = 1;
+}
+
+if ((sourceQ2Toggle == 0) && (loopCount == 2))
+{
+skipToggle = 1;
+}
+
+if ((sourceQ3Toggle == 0) && (loopCount == 3))
+{
+skipToggle = 1;
+}
+
+if ((sourceQ4Toggle == 0) && (loopCount == 4))
+{
+skipToggle = 1;
+}
+
+print(skipToggle)
+
+// === Main Protocol section>96w to 384w split> Tips On Command ===
+if (skipToggle == 1)
+{
+task.skip();
+}
+
+// === Main Protocol section>96w to 384w split> Mix in Q1/Q2/Q3/Q4 Command ===
+if (skipToggle == 1)
+{
+task.skip();
+}
+
+if (sourceMixToggle == 0)
+{
+task.skip();
+}
+
+// LOGIC TREE FOR SOURCE QUADRANT SELECTION
+if (loopCount == 1)
+{
+task.Wellselection = [[1, 1]];
+}
+
+if (loopCount == 2)
+{
+task.Wellselection = [[1, 2]];
+}
+
+if (loopCount == 3)
+{
+task.Wellselection = [[2, 1]];
+}
+
+if (loopCount == 4)
+{
+task.Wellselection = [[2, 2]];
+}
+
+// === Main Protocol section>96w to 384w split> Aspirate from Q1/Q2/Q3/Q4 Command ===
+if (skipToggle == 1)
+{
+task.skip();
+}
+
+// LOGIC TREE FOR SOURCE QUADRANT SELECTION
+if ((loopCount == 1) && (skipToggle == 0))
+{
+task.Wellselection = [[1, 1]];
+print("Q1 dispensing");
+}
+
+if ((loopCount == 2) && (skipToggle == 0))
+{
+task.Wellselection = [[1, 2]];
+print("Q2 dispensing");
+}
+
+if ((loopCount == 3) && (skipToggle == 0))
+{
+task.Wellselection = [[2, 1]];
+print("Q3 dispensing");
+}
+
+if ((loopCount == 4) && (skipToggle == 0))
+{
+task.Wellselection = [[2, 2]];
+print("Q4 dispensing");
+}
+
+// === Main Protocol section>96w to 384w split> Dispense Command ===
+if (skipToggle == 1)
+{
+task.skip();
+}
+
+if ((tipTouchToggle == 1) && (destinationMixToggle == 0))
+{
+task.Performtiptouch = true;
+task.Whichsidestousefortiptouch = "West";
+
+    if (sterileDispenseToggle == 0)
+    {
+    task.Tiptouchretractdistance = 6;
+    }
+
+    if (sterileDispenseToggle == 1)
+    {
+    task.Tiptouchretractdistance = 0;
+    }
+}
+
+// OmniTray handling logic tree
+if (omniTrayToggle == "True"){
+task.Liquidclass = "96 Water Slow";
+task.Distancefromwellbottom = 0.1;
+task.Dynamictipretraction = 0.2;
+task.Performtiptouch = true;
+task.Whichsidestousefortiptouch = "None";
+task.Tiptouchretractdistance = -1.5;
+}
+
+// === Main Protocol section>96w to 384w split> Mix Command ===
+if (skipToggle == 1)
+{
+task.skip();
+}
+
+if (destinationMixToggle == 0)
+{
+task.skip();
+}
+
+if ((destinationMixToggle == 1) && (tipTouchToggle == 1))
+{
+task.Performtiptouch = true;
+task.Whichsidestousefortiptouch = "West";
+
+    if (sterileDispenseToggle == 0)
+    {
+    task.Tiptouchretractdistance = 6;
+    }
+
+    if (sterileDispenseToggle == 1)
+    {
+    task.Tiptouchretractdistance = 0;
+    }
+}
+
+// === Main Protocol section>96w to 384w split> Javascript Command ===
+if (skipToggle == 1)
+{
+task.skip();
+}
+
+// === Main Protocol section>96w One-to-Many> Tips Off Command ===
+// SET LABWARE LOCATIONS FOR LIQUID HANDLING STEPS
+var sourcePlateLocation = 9
+var destinationPlateLocation = loopCount 
+
+// === Main Protocol section>96w to 384w split> Mix in source Command ===
+if (sourceMixToggle == 0)
+{
+task.skip();
+}
+
+// === Main Protocol section>96w One-to-Many> Dispense Command ===
+if (omniTrayToggle == "False"){
+
+    if (tipTouchToggle == 0 && sterileDispenseToggle == 0){
+    task.Performtiptouch = false;
+    task.Tiptouchretractdistance = 6;
+    }
+
+    if (tipTouchToggle == 0 && sterileDispenseToggle == 1){
+    task.Performtiptouch = false;
+    task.Tiptouchretractdistance = 0;
+    }
+
+    if (tipTouchToggle == 1 && sterileDispenseToggle == 0){
+    task.Performtiptouch = true;
+    task.Tiptouchretractdistance = 6;
+    }
+
+    if (tipTouchToggle == 1 && sterileDispenseToggle == 1){
+    task.Performtiptouch = true;
+    }
+}
+
+// OmniTray handling logic tree
+if (omniTrayToggle == "True"){
+task.Liquidclass = "96 Water Slow";
+task.Distancefromwellbottom = 0.1;
+task.Dynamictipretraction = 0.2;
+task.Performtiptouch = true;
+task.Whichsidestousefortiptouch = "None";
+task.Tiptouchretractdistance = dispenseHeight;
+}
+
+// === Main Protocol section>384w One-to-Many>  Command ===
+if (destinationMixToggle == 0){
+task.skip();
+}
+
+if (tipTouchToggle == 0){
+task.Performtiptouch = false;
+}
+
+if (sterileDispenseToggle == 0){
+task.Tiptouchretractdistance = 6;
+}
+
+if (sterileDispenseToggle == 1){
+task.Tiptouchretractdistance = 0;
+}
+
+// === Main Protocol section>384w to 384w many> Javascipt Command ===
+// SET LABWARE LOCATIONS FOR LIQUID HANDLING STEPS
+var sourcePlateLocation = 9
+var destinationPlateLocation = loopCount 
+
+// === Main Protocol section>384w to 384w many> Mix in Q1/Q2 Command ===
+// LOGIC TREE FOR SOURCE QUADRANT SELECTION
+if (sourceMixToggle == 0)
+{
+task.skip();
+}
+
+if (sourceQ1Toggle == 1)
+{
+task.Wellselection = [[1, 1]];
+}
+
+if (sourceQ2Toggle == 2)
+{
+task.Wellselection = [[1, 2]];
+}
+
+if (sourceQ3Toggle == 3)
+{
+task.Wellselection = [[2, 1]];
+}
+
+if (sourceQ4Toggle == 4)
+{
+task.Wellselection = [[2, 2]];
+}
+
+// === Main Protocol section>384w One-to-Many> Mix in Q1/Q2 Command ===
+// LOGIC TREE FOR SOURCE QUADRANT SELECTION
+if (sourceMixToggle == 0)
+{
+task.skip();
+}
+
+if (sourceQ1Toggle == 1)
+{
+task.Wellselection = [[1, 1]];
+}
+
+if (sourceQ2Toggle == 2)
+{
+task.Wellselection = [[1, 2]];
+}
+
+if (sourceQ3Toggle == 3)
+{
+task.Wellselection = [[2, 1]];
+}
+
+if (sourceQ4Toggle == 4)
+{
+task.Wellselection = [[2, 2]];
+}
+
+// === Main Protocol section>384w One-to-Many> Mix in Q1/Q2 Command ===
+// LOGIC TREE TO SKIP UN-NEEDED QUADRANT DISPENSES
+var skipToggle = 0;
+
+if ((destinationQ1Toggle == 0) && (quadrantLoopCount == 1))
+{
+skipToggle = 1;
+}
+
+if ((destinationQ2Toggle == 0) && (quadrantLoopCount == 2)) 
+{
+skipToggle = 1;
+}
+
+if ((destinationQ3Toggle == 0) && (quadrantLoopCount == 3))
+{
+skipToggle = 1;
+}
+
+if ((destinationQ4Toggle == 0) && (quadrantLoopCount == 4)) 
+{
+skipToggle = 1;
+}
+
+print(skipToggle)
+
+// === Main Protocol section>384w One-to-Many> Javascript Command ===
+// LOGIC TREE TO SKIP UN-NEEDED QUADRANT DISPENSES
+var skipToggle = 0;
+
+if ((destinationQ1Toggle == 0) && (quadrantLoopCount == 1))
+{
+skipToggle = 1;
+}
+
+if ((destinationQ2Toggle == 0) && (quadrantLoopCount == 2)) 
+{
+skipToggle = 1;
+}
+
+if ((destinationQ3Toggle == 0) && (quadrantLoopCount == 3))
+{
+skipToggle = 1;
+}
+
+if ((destinationQ4Toggle == 0) && (quadrantLoopCount == 4)) 
+{
+skipToggle = 1;
+}
+
+print(skipToggle)
+
+// === Main Protocol section>384w One-to-Many> Aspirate from Q1/Q2/Q3/Q4 Command ===
+// LOGIC TREE FOR SOURCE QUADRANT SELECTION
+if (sourceQ1Toggle == 1)
+{
+task.Wellselection = [[1, 1]];
+}
+
+if (sourceQ2Toggle == 1)
+{
+task.Wellselection = [[1, 2]];
+}
+
+if (sourceQ3Toggle == 1)
+{
+task.Wellselection = [[2, 1]];
+}
+
+if (sourceQ4Toggle == 1)
+{
+task.Wellselection = [[2, 2]];
+}
+
+// === Main Protocol section>384w One-to-Many> Dispense to Q1/Q2/Q3/Q4 Command ===
+// SKIP 384W DISPENSE IF 96W PLATE IS DESTINATION
+if (skipToggle == 1)
+{
+task.skip();
+}
+
+if (destinationToggle384w == 0)
+{
+task.skip();
+}
+
+if ((tipTouchToggle == 1) && (destinationMixToggle == 0))
+{
+task.Performtiptouch = true;
+task.Whichsidestousefortiptouch = "West";
+
+    if (sterileDispenseToggle == 0)
+    {
+    task.Tiptouchretractdistance = 6;
+    }
+
+    if (sterileDispenseToggle == 1)
+    {
+    task.Tiptouchretractdistance = 0;
+    }
+}
+
+// LOGIC TREE FOR DESTINATION QUADRANT SELECTION
+if ((quadrantLoopCount == 1) && (skipToggle == 0))
+{
+task.Wellselection = [[1, 1]];
+print("Q1 dispensing");
+}
+
+if ((quadrantLoopCount == 2) && (skipToggle == 0))
+{
+task.Wellselection = [[1, 2]];
+print("Q2 dispensing");
+}
+
+if ((quadrantLoopCount == 3) && (skipToggle == 0))
+{
+task.Wellselection = [[2, 1]];
+print("Q3 dispensing");
+}
+
+if ((quadrantLoopCount == 4) && (skipToggle == 0))
+{
+task.Wellselection = [[2, 2]];
+print("Q4 dispensing");
+}
+
+// === Main Protocol section>384w One-to-Many> Dispense to 96w Command ===
+// SKIP 96W DISPENSE ON LOOPS 2-4 MEANT FOR QUADRANT DISPENSES
+if ((destinationToggle384w == 0) && (quadrantLoopCount > 1))
+{
+task.skip()
+}
+
+if (destinationToggle384w == 1)
+{
+task.skip()
+}
+
+if ((tipTouchToggle == 1) && (destinationMixToggle == 0))
+{
+task.Performtiptouch = true;
+task.Whichsidestousefortiptouch = "West";
+
+    if (sterileDispenseToggle == 0)
+    {
+    task.Tiptouchretractdistance = 6;
+    }
+
+    if (sterileDispenseToggle == 1)
+    {
+    task.Tiptouchretractdistance = 0;
+    }
+}
+
+// === Main Protocol section>384w One-to-Many>Mix in Q1/Q2/Q3/Q$ Command ===
+if (destinationMixToggle == 0)
+{
+task.skip();
+}
+
+if (skipToggle == 1)
+{
+task.skip();
+}
+
+if ((destinationMixToggle == 1) && (tipTouchToggle == 1))
+{
+task.Performtiptouch = true;
+task.Whichsidestousefortiptouch = "West";
+
+    if (sterileDispenseToggle == 0)
+    {
+    task.Tiptouchretractdistance = 6;
+    }
+
+    if (sterileDispenseToggle == 1)
+    {
+    task.Tiptouchretractdistance = 0;
+    }
+}
+
+// LOGIC TREE FOR DESTINATION QUADRANT SELECTION
+if (quadrantLoopCount == 1)
+{
+task.Wellselection = [[1, 1]];
+}
+
+if (quadrantLoopCount == 2)
+{
+task.Wellselection = [[1, 2]];
+}
+
+if (quadrantLoopCount == 3)
+{
+task.Wellselection = [[2, 1]];
+}
+
+if (quadrantLoopCount == 4)
+{
+task.Wellselection = [[2, 2]];
+}
 

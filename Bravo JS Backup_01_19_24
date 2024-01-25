@@ -1944,3 +1944,243 @@ if (quadrantLoopCount == 4)
 task.Wellselection = [[2, 2]];
 }
 
+// === Main Protocol section>96w Many-to-One>Javascript Command ===
+// SET LABWARE LOCATIONS FOR LIQUID HANDLING STEPS
+var sourcePlateLocation = loopCount
+var destinationPlateLocation = 9 
+
+// === Main Protocol section>96w Many-to-One>Mix in source Command ===
+if (sourceMixToggle == 0)
+{
+task.skip();
+}
+
+// === Main Protocol section>96w Many-to-One>Dispense Command ===
+if (omniTrayToggle == "False"){
+
+    if (tipTouchToggle == 0 && sterileDispenseToggle == 0){
+    task.Performtiptouch = false;
+    task.Tiptouchretractdistance = 6;
+    }
+
+    if (tipTouchToggle == 0 && sterileDispenseToggle == 1){
+    task.Performtiptouch = false;
+    task.Tiptouchretractdistance = 0;
+    }
+
+    if (tipTouchToggle == 1 && sterileDispenseToggle == 0){
+    task.Performtiptouch = true;
+    task.Tiptouchretractdistance = 6;
+    }
+
+    if (tipTouchToggle == 1 && sterileDispenseToggle == 1){
+    task.Performtiptouch = true;
+    }
+}
+
+// OmniTray handling logic tree
+if (omniTrayToggle == "True"){
+task.Liquidclass = "96 Water Slow";
+task.Distancefromwellbottom = 0.1;
+task.Dynamictipretraction = 0.2;
+task.Performtiptouch = true;
+task.Whichsidestousefortiptouch = "None";
+task.Tiptouchretractdistance = dispenseHeight;
+}
+
+// === Main Protocol section>96w Many-to-One>Mix in destination Command ===
+if (destinationMixToggle == 0)
+{
+task.skip();
+}
+
+if (tipTouchToggle == 0){
+task.Performtiptouch = false;
+}
+
+if (sterileDispenseToggle == 0){
+task.Tiptouchretractdistance = 6;
+}
+
+if (sterileDispenseToggle == 1){
+task.Tiptouchretractdistance = 0;
+}
+
+// === Main Protocol section>384w Many-to-One>Javascript Command ===
+// SET LABWARE LOCATIONS FOR LIQUID HANDLING STEPS
+var sourcePlateLocation = loopCount
+var destinationPlateLocation = 9 
+
+// === Main Protocol section>384w Many-to-One>Mix in Q1 Command ===
+// LOGIC TREE FOR SOURCE QUADRANT SELECTION
+if (sourceMixToggle == 0)
+{
+task.skip();
+}
+
+task.Wellselection = [[1, 1]];
+
+// === Main Protocol section>384w Many-to-One>Aspirate from Q1 command ===
+task.Wellselection = [[1, 1]];
+
+// === Main Protocol section>384w Many-to-One>Dispense to Q1 command ===
+task.Wellselection = [[1, 1]];
+
+// === Main Protocol section>384w Many-to-One>Mix in Q1 command ===
+// LOGIC TREE FOR SOURCE QUADRANT SELECTION
+if (destinationMixToggle == 0)
+{
+task.skip();
+}
+
+task.Wellselection = [[1, 1]];
+
+// === Main Protocol section>384w Many-to-One>Mix in Q2 command ===
+// LOGIC TREE FOR SOURCE QUADRANT SELECTION
+if (sourceMixToggle == 0)
+{
+task.skip();
+}
+
+task.Wellselection = [[1, 2]];
+
+// === Main Protocol section>384w Many-to-One>Aspirate from Q2 command ===
+task.Wellselection = [[1, 2]];
+
+// === Main Protocol section>384w Many-to-One>Dispense to Q2 command ===
+task.Wellselection = [[1, 2]];
+
+// === Main Protocol section>384w Many-to-One>Mix in Q2 command ===
+// LOGIC TREE FOR SOURCE QUADRANT SELECTION
+if (destinationMixToggle == 0)
+{
+task.skip();
+}
+
+task.Wellselection = [[1, 2]];
+
+// === Main Protocol section>384w Many-to-One>Mix in Q3 command ===
+// LOGIC TREE FOR SOURCE QUADRANT SELECTION
+if (sourceMixToggle == 0)
+{
+task.skip();
+}
+
+task.Wellselection = [[2, 1]];
+
+// === Main Protocol section>384w Many-to-One>Aspirate from Q3 command ===
+task.Wellselection = [[2, 1]];
+
+// === Main Protocol section>384w Many-to-One>Dispense to Q3 command ===
+task.Wellselection = [[2, 1]];
+
+// === Main Protocol section>384w Many-to-One>Mix in Q3 command ===
+// LOGIC TREE FOR SOURCE QUADRANT SELECTION
+if (destinationMixToggle == 0)
+{
+task.skip();
+}
+
+task.Wellselection = [[2, 1]];
+
+// === Main Protocol section>384w Many-to-One>Mix in Q4 command ===
+// LOGIC TREE FOR SOURCE QUADRANT SELECTION
+if (sourceMixToggle == 0)
+{
+task.skip();
+}
+
+task.Wellselection = [[2, 2]];
+
+// === Main Protocol section>384w Many-to-One>Mix in Q4 command ===
+task.Wellselection = [[2, 2]];
+
+// === Main Protocol section>384w Many-to-One>Aspirate from Q4 command ===
+task.Wellselection = [[2, 2]];
+
+// === Main Protocol section>384w Many-to-One>Dispense to Q4 command ===
+task.Wellselection = [[2, 2]];
+
+// === Main Protocol section>384w Many-to-One>Mix in Q4 command ===
+// LOGIC TREE FOR SOURCE QUADRANT SELECTION
+if (destinationMixToggle == 0)
+{
+task.skip();
+}
+
+task.Wellselection = [[2, 2]];
+
+
+
+
+//maintenance.pro
+
+// === Startup Protocol section>Javascript command ===
+if (protocolStep == "Gripper Test") {
+    var processSelectionValue = 1;
+}
+if (protocolStep == "384w Allignment") {
+    var processSelectionValue = 2;
+}
+if (protocolStep == "Ribbon Test") {
+    var processSelectionValue = 3;
+}
+
+// === Main Protocol section>384w Allignment>Javascript command ===
+var dispenseColumn = outerLoopCount;
+
+// === Main Protocol section>384w Allignment>Dispense command ===
+if (outerLoopCount == 1)
+{
+task.Wellselection = [[1, dispenseColumn]];
+}
+
+
+
+
+//microbial_serial_dilution.pro
+
+// === Startup Protocol section>Javascript command ===
+var liquidClass1 = "96 Water Medium";
+
+// === Main Protocol section>Javascript command ===
+customPipetteHeight = 3;
+
+
+
+
+
+//Parameterizable Serial Dilution
+NOT BACKED UP
+
+
+
+
+//soil_dna_extraction.pro
+
+// === Startup Protocol section>Javascript command ===
+var supernatantRemovalLiquidClass = "96 Water Slow"
+var supernatantWasteDispenseLiquidClass = "96 Water Medium"
+var supernatantRemovalAspirationHeight = 0
+
+var bufferLiquidClass = "96 Water Medium"
+//VHB buffer is not too viscious 
+
+var freeDispenseHeight = 24
+
+
+var wasteReservoirDispenseHeight = 26
+//to avoid contaminating the tips during multiple stamps
+
+fasterSupernatantRemovalLiquidClass = "96 Water Medium"
+//faster later in protocol when working with more EtOH
+
+var ethanolLiquidClass = "96 Water Fast"
+
+
+
+
+
+
+
+
